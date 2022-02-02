@@ -18,8 +18,8 @@ class ChatbotDataset(Dataset):
 
         input = self.input_lines[index].strip().split()
         target = self.target_lines[index].strip().split()
-        input_len = len(input)
-        target_len = len(target)
+        input_len = len(input) if len(input) < config.max_input_len else config.max_input_len
+        target_len = len(target) if len(target) < config.max_target_len else config.max_target_len
 
         return input, target, input_len, target_len
 

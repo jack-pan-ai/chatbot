@@ -2,7 +2,7 @@ import pickle
 import os
 
 ######################   Path  ######################
-cur_path = '/Users/panq/Documents/Deep_learning/test/chatbot_service'
+cur_path = '/Users/panq/Documents/Deep_learning/test/chatbot'
 
 ###################### Saving dict ####################
 chatbot_by_word = True
@@ -25,7 +25,13 @@ if chatbot_by_word:
     chatbot_ws_target_path = cur_path + r'/corpus/binary_corpus/ws_target.pkl'
 
 if os.path.exists(chatbot_ws_input_path):
+    '''
+    This is used to load dictionary and transform methods
+    '''
     chatbox_ws_input = pickle.load(open(chatbot_ws_input_path, 'rb'))
     chatbox_ws_target = pickle.load(open(chatbot_ws_target_path, 'rb'))
 
 batch_size = 128
+embeddings_dim = 512
+num_layers = 4
+hidden_size = 256

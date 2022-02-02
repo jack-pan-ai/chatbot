@@ -57,6 +57,9 @@ class Word_Sequence:
     def transform(self, sentence, max_len = None, add_eos = True):
         '''Transform the sentence to numbers '''
         'Here is where we should go when facing the non-fixed sentence'
+        # to fill the last as eos
+        max_len = max_len - 1
+
         if len(sentence) > max_len:
             sentence = sentence[:max_len]
 

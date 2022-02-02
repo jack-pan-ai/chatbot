@@ -22,6 +22,6 @@ def ws_save():
 
 if __name__ == '__main__':
     # by_word did not use the package of jieba, which is way faster than functions (lcut) in jieba
-    # num = prepare_xiaohuangji(by_word=True)
-    # print('Total number of the pairs in the corpus: ', num)
+    num = prepare_xiaohuangji(by_word=True)
+    print('Total number of the pairs in the corpus: ', num)
     ws_save()
