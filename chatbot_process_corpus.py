@@ -1,4 +1,4 @@
-from prepare_corpus.chatbot.chatbot_corpus import prepare_xiaohuangji
+from corpus.chatbot_corpus import prepare_xiaohuangji
 import config
 from utils.word_sequence import Word_Sequence
 import pickle
@@ -9,7 +9,7 @@ def ws_save():
         for line in f.readlines():
             ws.fit(line.strip().split())
         ws.build_vocab()
-        print('The number of input set words: ', len(ws))
+        print('The size of input vocabulary: ', len(ws))
         pickle.dump(ws, open(config.chatbot_ws_input_path, 'wb'))
 
     ws = Word_Sequence()
@@ -17,7 +17,7 @@ def ws_save():
         for line in f.readlines():
             ws.fit(line.strip().split())
         ws.build_vocab()
-        print('The number of target set words: ', len(ws))
+        print('The size of target vocabulary: ', len(ws))
         pickle.dump(ws, open(config.chatbot_ws_target_path, 'wb'))
 
 if __name__ == '__main__':
