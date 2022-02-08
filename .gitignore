@@ -1,0 +1,8 @@
+# Files would be ignored below
+#*.a ingore all file ended with .a
+#!lib.a except for lib.a
+#/TODU ignore the TODU file in the root, not applied to sub-directory
+#bulid/ ignore all file in the build/
+
+model/parameters/
+
